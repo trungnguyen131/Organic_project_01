@@ -1,0 +1,306 @@
+@use "../base/variables" as header_color;
+@use "../abstracts/mixin" as header_mixin;
+@use "../vendor/reponsive" as header_repon;
+
+header#header {
+    div.container {
+        div#rowPdtb {
+            padding: 15px 0;
+            position: relative;
+            div.col:first-child {
+                div.iconOrganic {
+                    a > svg {width: 10.3rem;object-fit: cover;}
+                }
+            }
+            div.col:nth-child(2) {
+                display: flex;
+                @include header_repon.repon-sive(md) {
+                    display:none;
+                }
+                div#formInputSearrch {
+                    width: 100%;
+                    text-align: center;
+                    margin-block: auto;
+                    div.box-input-item {
+                        display: flex;
+                        overflow: hidden;
+                        border-radius: 30px;
+                        transition: border 0.3s linear;
+                        border: 1.55px solid header_color.$primary_color_borderinput;
+                        &:focus-within {
+                            border: {
+                                top:  1.5px solid header_color.$primary_color_graybl;
+                                left:  1.5px solid header_color.$primary_color_graybl;
+                                bottom:  1.5px solid header_color.$primary_color_graybl;
+                            }
+                            button > i {color: header_color.$primary_color_orange;}
+                        }
+                        input {
+                            flex-grow: 1;
+                            font-size: 14px;
+                            font-weight: 400;
+                            padding: 10px 15px;
+                            width: calc(100% - 43px);
+                            font-family: "Poppins", sans-serif;
+                            @include header_mixin.reset-border-outline();
+                            &::placeholder {
+                                font-size: 1.5rem;
+                                color:header_color.$primary_color_placeholder;
+                            }
+                        }
+
+                        button[type = "submit"] {
+                            border-radius: 50%;
+                            flex-shrink: 0;
+                            transition: background-color 0.3s linear;
+                            color:header_color.$primary_color_white;
+                            @include header_mixin.reset-border-outline();
+                            i#iconSearch {font-weight: 500; font-size: 1.6rem;};
+                            @include header_mixin.StyleElement(43px, 42px, header_color.$primary_color_gray_23);
+                            &:hover {background-color: header_color.$primary_color_orange; cursor: pointer; i {color:header_color.$primary_color_white}}
+                        }
+                    }
+                }
+            }
+            div.col:last-child {
+                @include header_repon.repon-sive(md) {
+                    margin-left: auto;
+                }
+                div.cl-fl {
+                    height: 100%;
+                    ul.shop-element {
+                        height: 100%;
+                        float: right;
+                        @include header_mixin.flex("align", 0, center);
+                        & > li.box-bars-menu {
+                            margin-right: 10px;
+                            display: none;;
+                            button {
+                                i.icon-menu {font-size: 2.1rem; display: inline-block}
+                                @include header_mixin.reset-border-outline(){background-color: transparent}
+                            }
+                            @include header_repon.repon-sive(lg) {
+                                display:inline-block;
+                            }
+                        }
+                        & > li.user-wrap div.acc-desk {
+                            @include header_mixin.flex("align", 0, center);
+                            i.icon-user {
+                                font-size: 3rem;
+                                display: inline-block;
+                                color:header_color.$primary_color_graybl;
+                                margin-right: 5px;
+                                transition: all 0.2s linear;
+                                @include header_repon.repon-sive(lg) {
+                                    margin-right: 0;
+                                }
+                            }
+
+                            &:hover > i.icon-user{
+                                color:header_color.$primary_color_orange
+                            }
+                            div.acc-box {
+                                margin-bottom: 4px;
+                                @include header_repon.repon-sive(lg) {
+                                    display:none;
+                                }
+
+                                a#boxAccount {
+                                    color:header_color.$primary_color_graybl;
+                                    display: block;
+                                    line-height: normal;
+                                    text-transform: uppercase;
+                                    margin-bottom: 3px;
+                                    font-size: 13px;
+                                    font-weight: 600;
+                                    font-family:"Poppins", sans-serif ;
+                                    transition: all 0.2s linear ;
+                                    &:hover {
+                                        color:header_color.$primary_color_orange
+                                    }
+                                    & + div a:first-child,
+                                    & + div a:last-child  {
+                                        font-size: 11px;
+                                        color: var(--color-secondary);
+                                        font-family:"Poppins", sans-serif ;
+                                        transition: all 0.2s linear ;
+                                        &:hover {
+                                            color:header_color.$primary_color_orange
+                                        }
+                                    }
+                                    & + div a:first-child {
+                                        padding-right: 5px;
+                                        margin-right: 5px;
+                                        border-right: 1px solid currentColor;
+                                    }
+                                }
+                            } 
+                        }
+                        & > li.search-icon {
+                            display: none;
+                            button {
+                                i.icon-magnifier {font-size: 2.6rem; display: inline-block; margin-left: 9px;}
+                                @include header_mixin.reset-border-outline(){background-color: transparent}
+                            }
+                            @include header_repon.repon-sive(md) {
+                                display:inline-block;
+                            }
+                        }
+                        & > li.wishList-wrap,
+                        & > li.cart-wrap {
+                            margin-left: 30px;
+                            @include header_repon.repon-sive(lg) {
+                                margin-left:20px ;
+                            }
+                            div.user-interact a {
+                                position: relative;
+                                display: inline-block;
+                                &:hover i {
+                                    color: header_color.$primary_color_orange;
+                                }
+                                i {
+                                    font-size: 3rem;
+                                    display: inline-block;
+                                    transition: color 0.2s linear;
+                                    color:header_color.$primary_color_graybl;
+                                } span {
+                                    position: absolute;
+                                    left: -7px;
+                                    $line-height: 18px;
+                                    width: $line-height;
+                                    height: $line-height;
+                                    line-height: $line-height;
+                                    border-radius: 50%;
+                                    display: inline-block;
+                                    text-align: center;
+                                    font-family:"Poppins", sans-serif ;
+                                    font-weight: 500;
+                                    color:header_color.$primary_color_white;
+                                    background-color: header_color.$primary_color_orange;
+                                }
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+
+        div.main-menu-area {
+            @include header_repon.repon-sive(lg) {
+                display: none
+            }
+            @include header_mixin.flex(
+                "align_justify", space-between, center
+            );
+            border-top:1px solid header_color.$primary_color_borderTop ;
+            nav.main-navigation {
+                ul.main-menu {
+                    display: flex;
+                    @for $run from 1 through 6 {
+                        li.menu-link.item-#{$run} {
+                            a.link-item {
+                                font-weight: 500;
+                                position: relative;
+                                padding: 18px 20px;
+                                display: inline-block;
+                                transition: color 0.2s linear;
+                                &:hover > :is(span, i.icon-arrow-down)  {
+                                    color: header_color.$primary_color_orange;
+                                }
+                                &::after {
+                                    content: " ";
+                                    position: absolute;
+                                    top:50%;
+                                    right:0;
+                                    transform: translateY(-50%);
+                                    @include header_mixin.StyleElement(1.2px, 23px,rgba($color: #05050517, $alpha: 0.09) );
+                                }
+                                span {
+                                    font-size: 14.3px;
+                                    font-weight: 500;
+                                    letter-spacing: 0.5px;
+                                    font-family:header_color.$pont_poppins;
+                                    transition: color 0.2s linear;
+                                    color: header_color.$primary_color_navigation_item_link;
+                                }
+    
+                                i.icon-arrow-down {
+                                    font-weight: 500;
+                                    margin-left: 3px;
+                                    display: inline-block;
+                                    font-size: 9px;
+                                    transition: color 0.2s linear;
+                                    color: header_color.$primary_color_navigation_item_link;
+                                }
+                            }
+                            @if($run == 1) {
+                                & > a.first {
+                                    padding-left: 0;
+                                }
+                            }  @else if($run == 6) {
+                                & > a.link-item::after {
+                                    all:initial;
+                                }
+                                & span.organic-span {
+                                    position: relative;
+                                    span {
+                                        display: inline-block;
+                                        position: absolute;
+                                        right: -18px;
+                                        top:-22px;
+                                        padding: 4.5px 6px;
+                                        font-size: 10px;
+                                        font-weight: 600;
+                                        text-transform: uppercase;
+                                        border-top-left-radius: 2px;
+                                        border-top-right-radius: 2px;
+                                        border-bottom-right-radius: 2px;
+                                        background-color: #a81f1f;
+                                        color:header_color.$primary_color_white;
+                                    }
+                                    span::before {
+                                        $size_triangle: 4.5px;
+                                        content: " ";
+                                        top:100%;
+                                        left: 0;
+                                        position: absolute;
+                                        border-top: $size_triangle solid #a81f1f;
+                                        border-right: $size_triangle solid transparent;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            div.call-line {
+                a.link-block {
+                    @include header_mixin.flex("align", 0, center);
+                    div.contact-block > span.number-phone:hover,
+                    div.icon-earphone:hover + div.contact-block > span.number-phone {
+                        color: header_color.$primary_color_orange;
+                    }
+                    div.contact-block {
+                        display: flex;
+                        margin-left: 14px;
+                        font-family: header_color.$pont_poppins;
+                        color:header_color.$primary_color_navigation_item_link;
+                        flex-direction: column;
+                        span {
+                            font-size: 15px;
+                            font-weight: 600;
+                            letter-spacing: 0.5px;
+                        } span.number-phone {
+                            margin-top: 7px;
+                            font-weight: 400;
+                            font-size: 14px;
+                            letter-spacing: 0.5px;
+                            display: inline-block;
+                            transition: color 0.2s linear;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

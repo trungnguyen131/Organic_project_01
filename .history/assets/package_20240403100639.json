@@ -1,0 +1,14 @@
+{
+  "name": "assets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:scss": "sass sass/styles.scss public/css/styles.css --watch"
+  },
+  "devDependencies": {
+    "jquery": "^3.7.1",
+    "owl.carousel": "^2.3.4",
+    "sass": "^1.72.0"
+  }
+}

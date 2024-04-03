@@ -1,0 +1,12 @@
+{
+  "name": "assets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:scss": "sass sass/style.scss public/css/style.css --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.72.0"
+  }
+}

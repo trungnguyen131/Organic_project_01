@@ -1,0 +1,43 @@
+@use "../../base/variables" as register_color;
+@use "../../abstracts/mixin" as register_mixin;
+@use "../../vendor/reponsive" as register_repon;
+
+div.bgc-img-breadcrumb {
+    background-image: url("../../images/breadcrumb-organic.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px 0;
+
+    ul.breadcrumb-list {
+        display: grid;
+        justify-content: center;
+        text-align: center;
+        li.breadcrumb-item:first-child {
+            margin-bottom: 30px;
+            position: relative;
+            &:after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 15px;
+                width: 4px;
+                background-color: #fff;
+                bottom: -20px;
+            }
+        }
+        li.breadcrumb-item:last-child > span {
+            color:register_color.$primary_color_orange;
+        }
+        li.breadcrumb-item > :is(a, span) {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 16px;
+            font-family: register_color.$pont_poppins;
+            color: register_color.$primary_color_gray_23;
+        }
+    }
+}
+

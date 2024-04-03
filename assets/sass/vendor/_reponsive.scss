@@ -1,0 +1,39 @@
+
+$max-width_xxl: 1499px ; /// xxl
+$max-width_xl: 1199.8px ; /// xl
+$max-width_lg: 990.8px ;  /// lg
+$max-width_md: 767.8px ;  /// md
+$max-width_sm: 575.8px ;  /// sm
+
+@mixin repon-sive($break-poi) {
+
+    @if ($break-poi == "xxl") {
+        @media screen and (max-width:$max-width_xxl) {
+            @content;
+        }
+    }
+
+    @if ($break-poi == "xl") {
+        @media screen and (max-width:$max-width_xl) {
+            @content;
+        }
+    }
+
+    @if ($break-poi == "lg") {
+        @media screen and (max-width:$max-width_lg) {
+            @content;
+        }
+    }
+
+    @if ($break-poi == "md") {
+        @media screen and (max-width:$max-width_md) {
+            @content;
+        }
+    }
+
+    @if ($break-poi == "sm") {
+        @media screen and (max-width:$max-width_sm) {
+            @content;
+        }
+    }
+}

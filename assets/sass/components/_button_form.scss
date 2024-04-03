@@ -1,0 +1,21 @@
+@use "../base/variables" as component_btn;
+
+@mixin Button() {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 25px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease-in-out ;
+    color: component_btn.$primary_color_white;
+    border:2px solid component_btn.$primary_color_orange;
+    background-color: component_btn.$primary_color_orange;
+    &:hover {
+        color:component_btn.$primary_color_orange;
+        background-color: component_btn.$primary_color_white;
+    }
+    @content;
+}

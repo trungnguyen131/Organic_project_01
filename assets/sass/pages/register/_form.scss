@@ -1,0 +1,143 @@
+@use "../../base/variables" as register_color;
+@use "../../abstracts/mixin" as register_mixin;
+@use "../../vendor/reponsive" as register_repon;
+@use "../../components/button_form" as register_button;
+
+
+main#form-main {
+    section.section-ptb {
+        padding: 80px 0;
+        div.log-acc-page {
+            max-width: 60%;
+            @include register_mixin.flex(
+                "align_justify", center, center
+            ) {flex-wrap: wrap;}
+            margin: 0 auto;
+            div.acc-page {
+                width: 50%;
+                form#create-customer {
+                    div.login-form-container {
+                        padding:32px;
+                        border-radius:3px;
+                        border:1px solid #eee;
+                        background-color: register_color.$primary_color_white;
+
+                        div.title-text {
+                            font-family: register_color.$pont_poppins;
+                            h2 {
+                                font-size: 30px;
+                                font-weight: 600;
+                                color: register_color.$primary_color_navigation_item_link;
+                            }
+
+                            p {
+                                font-size: 14px;
+                                font-weight: 400;
+                                letter-spacing: 0.5px;
+                                margin-block-start: 20px;
+                                line-height: 30px;
+                                color: register_color.$primary_color_black111;
+                            }
+                        }
+
+                        ul.fill-form {
+                            li {
+                                margin-top: 30px;
+                                label {
+                                    font-size: 14px;
+                                    cursor: pointer;
+                                    font-weight: 400;
+                                    margin-bottom: 5px;
+                                    letter-spacing: 0.5px;
+                                    display: inline-block;
+                                    font-family: register_color.$pont_poppins;
+                                    color: register_color.$primary_color_black111;
+                                }
+                                input {
+                                    width:100%;
+                                    outline: none;
+                                    padding: 11px 15px;
+                                    display: inline-block;
+                                    @include register_mixin.reset-border-outline();
+                                    border:0.8px solid rgba(0, 0, 0, 0.1);
+                                    line-height: 1.4;
+                                    &::placeholder {
+                                        font-size: 15px;
+                                        letter-spacing: 0.5px;
+                                    }
+                                }
+                            } 
+                            li:last-child {
+                                display:list-item;
+                                div.form-acction-btn {
+                                    button {
+                                        @include register_button.Button();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            div.acc-page-last {
+                div.side-form-wrap {
+                    margin-left: 30px;
+                    div.acc-title {
+                        text-align: center;
+                        font-family: register_color.$pont_poppins;
+                        h6 {
+                            font-size: 16px;
+                            font-weight: 600;
+                            letter-spacing: 0.5px;
+                            color: register_color.$primary_color_navigation_item_link;
+                        }
+                        div.account-optional-action {
+                            margin-top: 30px;
+                            font-size: 15px;
+                            a#customer-login-link {
+                                @include register_button.Button(){
+                                    & {
+                                        color:register_color.$primary_color_orange;
+                                        background-color: register_color.$primary_color_white;
+                                    }
+                                    &:hover {
+                                        color: register_color.$primary_color_white;
+                                        background-color:register_color.$primary_color_orange;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    div.term-privacy {
+                        font-family: register_color.$pont_poppins;
+                        p.term-con {
+                            margin-top: 30px;
+                            span {
+                                display: inline-block;
+                            }
+                            a {
+                                font-size: 13px;
+                                font-weight: 600;
+                                letter-spacing: 0.5px;
+                                color: register_color.$primary_color_orange;
+                            }
+                        }
+    
+                        p.pri-pol {
+                            font-size: 13px;
+                            font-weight: 400;
+                            margin-top: 17px;
+                            line-height: 30px;
+                            color: register_color.$primary_color_black111;
+                            a {
+                                font-weight: 600;
+                                color:register_color.$primary_color_orange;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
