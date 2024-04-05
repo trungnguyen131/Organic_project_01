@@ -1,0 +1,113 @@
+// @use "../base" as mixin;
+//////===============mixin (style-width-height)
+@mixin StyleElement($w, $h = $w, $bgc:hsl(127, 8%, 23%)) {
+    width: $w;
+    height: $h;
+    background-color: $bgc;
+    @content;
+}
+
+
+/////===============mixin (style-border-outline)
+@mixin reset-border-outline() {
+    border: none;
+    outline: none;
+    @content;
+}
+//// ===============mixin (flex-layout)
+// 
+@mixin flex($condition__keys, $value__justify, $value__align) {
+    display:flex;
+
+    ///========= flex-align
+    @if($condition__keys == 'align') {
+        align-items:$value__align ;
+    }
+
+    ///========= flex-justify
+    @else if($condition__keys == 'justify') {
+        justify-content: $value__justify;
+    }
+
+    ///========= flex-align-justify
+    @else if ($condition__keys == 'align_justify') {
+        justify-content: $value__justify;
+        align-items: $value__align;
+    }
+
+    @content;
+}
+
+///================= mixin(position-x-y)
+
+@mixin position_element(
+    $conditions_spacing, 
+    $top, 
+    $left,
+    $bottom,
+    $right
+    ) {
+    position: absolute;
+
+    ///======= Th1-cách theo chiều Ox
+    @if ($conditions_spacing == 'spacing_left') {
+        left: $left;
+    } 
+    @else if($conditions_spacing == 'spacing_right') {
+        right: $right;
+    }
+
+    ///======= Th2-cách theo chiều Oy
+    @else if ($conditions_spacing == 'spacing_top') {
+        top: $top;
+    } 
+    @else if($conditions_spacing == 'spacing_bottom') {
+        bottom: $bottom;
+    }
+
+    ///======= Th3-cách theo Ox-Oy
+    @else if($conditions_spacing == 'topLeft') {
+        top: $top;
+        left: $left;
+    }
+
+    @else if($conditions_spacing == 'topRight') {
+        top: $top;
+        right: $right;
+    }
+
+    @else if($conditions_spacing == 'bottomLeft') {
+        bottom: $bottom;
+        left: $left;
+    }
+
+    @else if($conditions_spacing == 'bottomRight') {
+        bottom: $bottom;
+        right: $right;
+    }
+
+    @content;
+} 
+
+///============= mixin(position-content)
+
+@mixin posi__content($content) {
+    content:$content; 
+    position: absolute;
+}
+
+///============= mixin(Images)
+
+@mixin zeset_images($valus_images) {
+    @include StyleElement(100%, 100%, initial);
+    object-fit:#{$valus_images};
+    @content;
+}
+///==================tab-js
+
+@mixin line_clamp($numberClamp) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: #{$numberClamp};
+    overflow: hidden;
+}

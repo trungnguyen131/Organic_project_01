@@ -58,6 +58,7 @@ table {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 @media screen and (max-width: 767.8px) {
   html {
@@ -163,7 +164,7 @@ header#header div.container div#rowPdtb div.col:nth-child(2) div#formInputSearrc
 }
 header#header div.container div#rowPdtb div.col:nth-child(2) div#formInputSearrch div.box-input-item input::placeholder {
   font-size: 1.5rem;
-  color: hsl(240, 19%, 55%);
+  color: hsl(240, 0%, 40%);
 }
 header#header div.container div#rowPdtb div.col:nth-child(2) div#formInputSearrch div.box-input-item button[type=submit] {
   border-radius: 50%;
@@ -365,7 +366,7 @@ header#header div.container div.main-menu-area nav.main-navigation ul.main-menu 
   font-size: 14.3px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: color 0.2s linear;
   color: rgb(51, 51, 51);
 }
@@ -404,7 +405,7 @@ header#header div.container div.main-menu-area nav.main-navigation ul.main-menu 
   font-size: 14.3px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: color 0.2s linear;
   color: rgb(51, 51, 51);
 }
@@ -440,7 +441,7 @@ header#header div.container div.main-menu-area nav.main-navigation ul.main-menu 
   font-size: 14.3px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: color 0.2s linear;
   color: rgb(51, 51, 51);
 }
@@ -476,7 +477,7 @@ header#header div.container div.main-menu-area nav.main-navigation ul.main-menu 
   font-size: 14.3px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: color 0.2s linear;
   color: rgb(51, 51, 51);
 }
@@ -512,7 +513,7 @@ header#header div.container div.main-menu-area nav.main-navigation ul.main-menu 
   font-size: 14.3px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: color 0.2s linear;
   color: rgb(51, 51, 51);
 }
@@ -548,7 +549,7 @@ header#header div.container div.main-menu-area nav.main-navigation ul.main-menu 
   font-size: 14.3px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: color 0.2s linear;
   color: rgb(51, 51, 51);
 }
@@ -600,7 +601,7 @@ header#header div.container div.main-menu-area div.call-line a.link-block div.ic
 header#header div.container div.main-menu-area div.call-line a.link-block div.contact-block {
   display: flex;
   margin-left: 14px;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   color: rgb(51, 51, 51);
   flex-direction: column;
 }
@@ -619,7 +620,54 @@ header#header div.container div.main-menu-area div.call-line a.link-block div.co
 }
 
 main#main {
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+main#main button#btnUp {
+  width: 38px;
+  height: 38px;
+  outline: none;
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  color: hsl(0, 0%, 100%);
+  border: 2px solid hsl(39, 91%, 54%);
+  background-color: hsl(39, 91%, 54%);
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000;
+  cursor: pointer;
+  background-color: transparent;
+}
+main#main button#btnUp.btn-show {
+  opacity: 1;
+  bottom: 60px;
+  visibility: visible;
+}
+main#main button#btnUp i {
+  font-size: 15px;
+}
+main#main button#btnUp.swiper-button-prev {
+  left: 30px !important;
+}
+main#main button#btnUp.swiper-button-next {
+  right: 30px !important;
+}
+main#main button#btnUp:hover {
+  background-color: transparent;
+  color: hsl(39, 91%, 54%);
+}
+main#main button#btnUp:hover, main#main button#btnUp:hover i {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(39, 91%, 54%);
+}
+main#main button#btnUp i {
+  font-weight: 400;
+  font-size: 14px;
+  color: hsl(39, 91%, 54%);
+  background-color: transparent !important;
 }
 main#main img {
   width: 100%;
@@ -635,7 +683,7 @@ main#main section.shopify-section div.home-slider div.swiper-slide {
 main#main section.shopify-section div.home-slider div.swiper-slide div.slide-image {
   aspect-ratio: 15/6;
   position: relative;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 main#main section.shopify-section div.home-slider div.swiper-slide div.slide-image div.slider-text-info {
   position: absolute;
@@ -664,7 +712,7 @@ main#main section.shopify-section div.home-slider div.swiper-slide div.slide-ima
 main#main section.shopify-section div.home-slider div.swiper-slide div.slide-image div.slider-text-info span {
   font-size: 21px;
   display: inline-block;
-  animation: fadeUpShow 1s ease-in-out 0.2s 1 forwards;
+  animation: fadeUpShow 1s ease-in-out 0.2s forwards;
 }
 main#main section.shopify-section div.home-slider div.swiper-slide div.slide-image div.slider-text-info h1 {
   line-height: 60px;
@@ -674,7 +722,7 @@ main#main section.shopify-section div.home-slider div.swiper-slide div.slide-ima
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  animation: fadeUpShow 1s ease-in-out 0.5s 1 forwards;
+  animation: fadeUpShow 1s ease-in-out 0.5s forwards;
 }
 main#main section.shopify-section div.home-slider div.swiper-slide div.slide-image div.slider-text-info a.btn {
   border-radius: 50px;
@@ -687,7 +735,7 @@ main#main section.shopify-section div.home-slider div.swiper-slide div.slide-ima
   color: hsl(0, 0%, 100%);
   background-color: hsl(39, 91%, 54%);
   border: 2px solid hsl(39, 91%, 54%);
-  animation: fadeUpShow 1s ease-in-out 0.8s 1 forwards;
+  transition: all 0.2s ease-in-out;
 }
 main#main section.shopify-section div.home-slider div.swiper-slide div.slide-image div.slider-text-info a.btn:hover {
   background-color: transparent;
@@ -720,7 +768,7 @@ main#main section.shopify-section div.home-slider div.swp-btn {
   background-color: hsl(39, 91%, 54%);
 }
 main#main section.shopify-section div.home-slider div.swp-btn i {
-  font-size: 19px;
+  font-size: 15px;
 }
 main#main section.shopify-section div.home-slider div.swp-btn.swiper-button-prev {
   left: 30px !important;
@@ -772,7 +820,7 @@ main#main section.shopify-section div.banner-grid div.grid-wrapper div.banner-co
   color: hsl(0, 0%, 100%);
   background-color: hsl(39, 91%, 54%);
   border: 2px solid hsl(39, 91%, 54%);
-  animation: fadeUpShow 1s ease-in-out 0.8s 1 forwards;
+  transition: all 0.2s ease-in-out;
 }
 main#main section.shopify-section div.banner-grid div.grid-wrapper div.banner-content a.btn:hover {
   background-color: transparent;
@@ -999,6 +1047,20 @@ main#main section.shopify-section.product div.block_product div.owl-carousel art
 main#main section.shopify-section.product div.block_product div.owl-carousel article.product__item div.product__wrap div.product__image div.product__action a:last-child {
   margin-right: 0;
 }
+main#main section.shopify-section.product div.block_product div.owl-carousel article.product__item div.product__wrap div.product__image div.product__title {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: hsl(356, 96%, 45%);
+  z-index: 2;
+  padding: 7px 14px;
+  border-radius: 2px;
+}
+main#main section.shopify-section.product div.block_product div.owl-carousel article.product__item div.product__wrap div.product__image div.product__title span {
+  font-size: 13px;
+  font-weight: 500;
+  color: hsl(0, 0%, 100%);
+}
 main#main section.shopify-section.product div.block_product div.owl-carousel article.product__item div.product__wrap div.product__content div.product_link_info {
   margin-top: 17px;
 }
@@ -1047,6 +1109,85 @@ main#main section.shopify-section.product div.block_product div.owl-carousel art
   padding: 0px 0px 0px 5px;
   text-decoration-line: line-through;
 }
+main#main section.shopify-section.dealBanner {
+  margin-top: 75px;
+}
+main#main section.shopify-section.dealBanner div.dealBanner__image {
+  height: 450px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+main#main section.shopify-section.dealBanner div.dealBanner__image div.dealBanner__info {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+main#main section.shopify-section.dealBanner div.dealBanner__image div.dealBanner__info div.dealBanner__block {
+  max-width: 427px;
+  display: grid;
+  place-items: center;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  letter-spacing: 0.7px;
+  font-weight: 500;
+}
+main#main section.shopify-section.dealBanner div.dealBanner__image div.dealBanner__info div.dealBanner__block div.dealBanner__block_content {
+  letter-spacing: 0.05rem;
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+main#main section.shopify-section.dealBanner div.dealBanner__image div.dealBanner__info div.dealBanner__block div.dealBanner__block_content h2.deal__heading {
+  font-weight: 600;
+  font-size: 3rem;
+  margin: 17px 0 32px 0;
+}
+main#main section.shopify-section.dealBanner div.dealBanner__image div.dealBanner__info div.dealBanner__block ul.counterdow__row {
+  display: flex;
+}
+main#main section.shopify-section.dealBanner div.dealBanner__image div.dealBanner__info div.dealBanner__block ul.counterdow__row li.counter__section {
+  margin-right: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 7rem;
+  height: 7rem;
+  background-color: hsl(39, 91%, 54%);
+}
+main#main section.shopify-section.dealBanner div.dealBanner__image div.dealBanner__info div.dealBanner__block ul.counterdow__row li.counter__section span.counter__number {
+  font-weight: 600;
+  font-size: 2.9rem;
+  line-height: 1.4;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+main#main section.shopify-section.dealBanner div.dealBanner__image div.dealBanner__info div.dealBanner__block ul.counterdow__row li.counter__section span.counter__title {
+  font-size: 1.3rem;
+  font-weight: 400;
+  display: inline-block;
+}
+main#main section.shopify-section.dealBanner div.dealBanner__image div.dealBanner__info div.dealBanner__block a.btn {
+  border-radius: 50px;
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 32px;
+  padding: 13px 30px;
+  font-size: 14px;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(39, 91%, 54%);
+  border: 2px solid hsl(39, 91%, 54%);
+  transition: all 0.2s ease-in-out;
+}
+main#main section.shopify-section.dealBanner div.dealBanner__image div.dealBanner__info div.dealBanner__block a.btn:hover {
+  background-color: transparent;
+  color: hsl(39, 91%, 54%);
+}
 
 div.bgc-img-breadcrumb {
   background-image: url("../../images/breadcrumb-organic.webp");
@@ -1082,7 +1223,7 @@ div.bgc-img-breadcrumb ul.breadcrumb-list li.breadcrumb-item > :is(a, span) {
   text-decoration: none;
   font-weight: 400;
   font-size: 16px;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   color: hsl(0, 0%, 14%);
 }
 
@@ -1107,7 +1248,7 @@ main#form-main section.section-ptb div.log-acc-page div.acc-page form#create-cus
   background-color: hsl(0, 0%, 100%);
 }
 main#form-main section.section-ptb div.log-acc-page div.acc-page form#create-customer div.login-form-container div.title-text {
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 main#form-main section.section-ptb div.log-acc-page div.acc-page form#create-customer div.login-form-container div.title-text h2 {
   font-size: 30px;
@@ -1132,7 +1273,7 @@ main#form-main section.section-ptb div.log-acc-page div.acc-page form#create-cus
   margin-bottom: 5px;
   letter-spacing: 0.5px;
   display: inline-block;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   color: rgb(111, 111, 111);
 }
 main#form-main section.section-ptb div.log-acc-page div.acc-page form#create-customer div.login-form-container ul.fill-form li input {
@@ -1175,7 +1316,7 @@ main#form-main section.section-ptb div.log-acc-page div.acc-page-last div.side-f
 }
 main#form-main section.section-ptb div.log-acc-page div.acc-page-last div.side-form-wrap div.acc-title {
   text-align: center;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 main#form-main section.section-ptb div.log-acc-page div.acc-page-last div.side-form-wrap div.acc-title h6 {
   font-size: 16px;
@@ -1214,7 +1355,7 @@ main#form-main section.section-ptb div.log-acc-page div.acc-page-last div.side-f
   background-color: hsl(39, 91%, 54%);
 }
 main#form-main section.section-ptb div.log-acc-page div.acc-page-last div.side-form-wrap div.term-privacy {
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 main#form-main section.section-ptb div.log-acc-page div.acc-page-last div.side-form-wrap div.term-privacy p.term-con {
   margin-top: 30px;

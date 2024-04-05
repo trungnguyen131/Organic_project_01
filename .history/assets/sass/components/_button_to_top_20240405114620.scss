@@ -1,0 +1,21 @@
+@use "../base/variables" as button_click_up;
+@mixin buttonStyleUp() {
+    width: 38px;
+    height: 38px;
+    outline: none;
+    position: absolute;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    color:container_color.$primary_color_white;
+    border:2px solid button_click_up.$primary_color_orange;
+    background-color: button_click_up.$primary_color_orange;
+    i {font-size: 19px;}
+    &.swiper-button-prev{left:30px !important;}
+    &.swiper-button-next {right:30px !important; }
+    &:hover {
+        background-color: transparent;
+        color:container_color.$primary_color_orange;
+    }
+
+    @content
+}

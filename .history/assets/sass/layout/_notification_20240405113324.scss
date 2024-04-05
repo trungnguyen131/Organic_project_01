@@ -1,0 +1,28 @@
+@use "../base/variables" as notif_color;
+
+section.sectionNotiFi {
+    $line-height: 4.6rem;
+    min-height: $line-height;
+    background-color: notif_color.$primary_color_gray_23;
+    .textFree {
+        text-align: center;
+        color:notif_color.$primary_color_white;
+        font-family:notif_color.$poppins_sa ;
+        line-height: $line-height;
+        font-size: 1.4rem;
+        word-spacing: 1px;
+
+        &--color {
+            font-weight: 600; 
+            animation: flashingColor 0.3s linear infinite alternate;
+            -webkit-animation:flashingColor 0.3s linear infinite alternate ; /// chrome, safari
+            -moz-animation: flashingColor 0.3s linear infinite alternate;  /// firefox
+            -o-animation: flashingColor 0.3s linear infinite alternate;   //// opera
+            @keyframes flashingColor {
+                100% {
+                    color:notif_color.$primary_color_orange
+                }
+            }
+        }
+    }
+}
