@@ -1,0 +1,27 @@
+@use "../base/variables" as btnShop_color;
+@use "../abstracts/mixin" as btnShop_mixin;
+@use "../vendor/reponsive" as btnShop_repon;
+
+@mixin buttonShopNow($filter_items: "") {
+    @if(#{$filter}) {
+
+    }
+    .btn { 
+        border-radius: 50px;
+        display: inline-block;
+        font-weight: 600;
+        margin-top: 32px;
+        padding: 13px 30px; font-size: 14px;
+        text-align: center;
+        color: btnShop_color.$primary_color_white;
+        background-color:btnShop_color.$primary_color_orange;
+        border: 2px solid btnShop_color.$primary_color_orange;
+        animation: fadeUpShow 1s ease-in-out 0.5s forwards;
+    }
+    a.btn:hover {
+        background-color: transparent;
+        color:btnShop_color.$primary_color_orange;
+    }
+    @content;
+}
+

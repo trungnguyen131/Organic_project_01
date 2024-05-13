@@ -1,0 +1,12 @@
+@use "../base/variables" as btnShop_color;
+@use "../abstracts/mixin" as btnShop_mixin;
+@use "../vendor/reponsive" as btnShop_repon;
+
+@mixin buttonShopNow($filter_items: "") {
+    @if(#{$filter_items == "filter_products"}) {
+
+    }
+    
+    @content;
+}
+
